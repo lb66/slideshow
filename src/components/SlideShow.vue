@@ -1,8 +1,8 @@
 <template>
   <div class="slideShow-wrap" @mouseenter="stop" @mouseleave="begin">
-    <transition-group tag="ul" class="slide-ul" name="list">
-      <li v-for="(list,index) in slideList" :key="index" v-show="index===currentIndex">
-        <img :src="list.image" />
+    <transition-group tag="ul" name="list">
+      <li v-for="(item,index) in slideList" :key="index" v-show="index===currentIndex">
+        <img :src="item.image" />
       </li>
     </transition-group>
     <div class="slideShow-items">
@@ -62,14 +62,9 @@ export default {
 }
 .slideShow-wrap {
   position: relative;
-  height: 450px;
-  width: 100%;
   overflow: hidden;
-  background-color: #fff;
-}
-.slide-ul {
   width: 100%;
-  height: 100%;
+  height: 50vw;
   li {
     list-style: none;
     position: absolute;
@@ -80,22 +75,22 @@ export default {
       height: 100%;
     }
   }
-}
-.slideShow-items {
-  position: absolute;
-  top: 400px;
-  width: 100%;
-  text-align: center;
-  span {
-    display: inline-block;
-    height: 8px;
-    width: 32px;
-    margin: 3px;
-    background-color: #b2b2b2;
-    cursor: pointer;
-  }
-  .active {
-    background-color: orange;
+  .slideShow-items {
+    position: absolute;
+    top: 45vw;
+    width: 100%;
+    text-align: center;
+    span {
+      display: inline-block;
+      height: 8px;
+      width: 32px;
+      margin: 3px;
+      background-color: #b2b2b2;
+      cursor: pointer;
+    }
+    .active {
+      background-color: orange;
+    }
   }
 }
 .list-enter-active {
