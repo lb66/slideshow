@@ -104,9 +104,6 @@ export default {
   opacity: 0;
   transform: translateX(100%);
 }
-.list-leave {
-  transform: translateX(0);
-}
 .list-leave-to {
   opacity: 0;
 }
